@@ -21,7 +21,7 @@ import appModule from './app';
     FormsModule,
     HttpModule,
     RouterModule.forRoot([], {
-      useHash: true
+      useHash: false
     }),
     // app
     appModule

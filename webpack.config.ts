@@ -54,7 +54,8 @@ function webpackConfig(options: EnvOptions = {}): WebpackConfig {
       path: root('dist'),
       filename: '[name].bundle.js',
       sourceMapFilename: '[name].map',
-      chunkFilename: '[id].chunk.js'
+      chunkFilename: '[id].chunk.js',
+      publicPath : '/'
     },
 
     module: {

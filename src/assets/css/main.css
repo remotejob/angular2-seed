@@ -1,0 +1,8 @@
+body {
+    background: url('/assets/img/backgroundimg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    font-family: 'Finger Paint', cursive !important;
+    text-shadow: 1px 1px 1px #aaa;
+    margin: 10px;
+}

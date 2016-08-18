@@ -6,6 +6,7 @@ import homeModule, { Home } from './home';
 const ROUTER_CONFIG = [
   { path: '', component: Home, pathMatch: 'full' },
   { path: 'about', loadChildren: './+about' },
+  { path: 'contact', loadChildren: './contact' },
 ];
 
 @NgModule({
