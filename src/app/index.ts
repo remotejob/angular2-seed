@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import homeModule, { Home } from './home';
 
+
 const ROUTER_CONFIG = [
   { path: '', component: Home, pathMatch: 'full' },
   { path: 'about', loadChildren: './+about' },

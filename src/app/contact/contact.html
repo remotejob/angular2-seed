@@ -1,33 +1,38 @@
 <div>
- 
-  
+
   <div class="container">
-<div class=well>
-<h2>Как связаться</h2>
+    <div class=well>
+      
+<div *ngIf="client">
+    <h3>Отправлены следующие данные:</h3>
 
- <form #loginForm="ngForm" (submit)="doLogin($event)">
-    <input ngControl="email" type="email" placeholder="Your email">
-    <input ngControl="password" type="password" placeholder="Your password">
-  <button type="submit">Log in</button>
-</form>
-
-
-    <form #form="ngForm" (ngSubmit)="onSubmit(form.value, form)" novalidate>
-      <div>
-        <label> e-mail
-          <input #inputEmail="ngModel" name="inputEmail" [(ngModel)]="email" ac-is-email >
-        </label>
-      </div>
-
-      <div *ngIf="form.submitted && inputEmail?.errors?.isEmail" style="background-color: red">
-        Please use a valid email address
-      </div>
-
-      <button>Submit</button>
-
-    </form>
+    <span class="label label-default">телефон:</span>&nbsp;{{client.Phone}}<br/><br/>
+    <span class="label label-default">е-маил:</span>&nbsp;{{client.Email}}<br/><br/>
+    <span class="label label-default">skype:</span>&nbsp;{{client.Skype}}<br/><br/>
+   <button (click)="returnBack($event)">Возврат</button>
 </div>
+ <div *ngIf="!client">  
+     <h3>Как связаться: Оставьте свой номер телефона или е-маил,Skype</h3> 
+      <form [formGroup]="registerForm" novalidate (ngSubmit)="saveClient(registerForm.value)">
 
+        <div class="row">
+          <div class="col-md-2">номер телефона:</div>
+          <div class="col-md-10"><input type="text" formControlName="phone"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">е-маил:</div>
+          <div class="col-md-10"><input type="text" formControlName="email"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">Skype:</div>
+          <div class="col-md-10"><input type="text" formControlName="skype"></div>
+        </div>
+
+        <button type="submit">Ввести данные</button>
+      </form>
+
+    </div>
+</div>
   </div>
 
 </div>

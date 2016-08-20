@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { RouterModule, RouterConfig } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+// import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { Contact } from './contact';
 
@@ -16,8 +17,9 @@ export const ROUTER_CONFIG = [
   imports: [
     // Components / Directives/ Pipes
     RouterModule.forChild(ROUTER_CONFIG),
-    FormsModule,
-    BrowserModule
+    // FormsModule,
+    BrowserModule,
+    ReactiveFormsModule
   ]
 })
 export default class ContactModule {
